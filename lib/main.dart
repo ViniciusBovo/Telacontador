@@ -100,7 +100,6 @@ class _TelaContadorState extends State<TelaContador> {
               const SizedBox(height: 40),
               ElevatedButton(
                 onPressed: () async {
-                  // Nível 3: aguarda o retorno da TelaResumo
                   final resultado = await Navigator.push<bool>(
                     context,
                     MaterialPageRoute(

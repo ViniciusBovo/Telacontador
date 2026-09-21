@@ -44,7 +44,6 @@ class TelaResumo extends StatelessWidget {
               const SizedBox(height: 32),
               ElevatedButton.icon(
                 onPressed: () {
-                  // Nível 3: retorna 'true' confirmando o pedido
                   Navigator.pop(context, true);
                 },
                 icon: const Icon(Icons.check),
