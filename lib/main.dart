@@ -31,7 +31,8 @@ class TelaContador extends StatefulWidget {
 
 class _TelaContadorState extends State<TelaContador> {
   int _quantidade = 1;
-  final String _nomeProduto = 'Iphone 17 Pro Max';
+  final String _nomeProduto = 'Smartphone Galaxy S24';
+  final double _precoUnitario = 150.00;
 
   void _incrementar() {
     setState(() {
@@ -49,7 +50,7 @@ class _TelaContadorState extends State<TelaContador> {
 
   void _zerar() {
     setState(() {
-      _quantidade = 0;
+      _quantidade = 1;
     });
   }
 
@@ -105,6 +106,7 @@ class _TelaContadorState extends State<TelaContador> {
                       builder: (context) => TelaResumo(
                         item: _nomeProduto,
                         quantidade: _quantidade,
+                        total: _quantidade * _precoUnitario,
                       ),
                     ),
                   );
