@@ -99,8 +99,9 @@ class _TelaContadorState extends State<TelaContador> {
               ),
               const SizedBox(height: 40),
               ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
+                onPressed: () async {
+                  // Nível 3: aguarda o retorno da TelaResumo
+                  final resultado = await Navigator.push<bool>(
                     context,
                     MaterialPageRoute(
                       builder: (context) => TelaResumo(
@@ -110,6 +111,16 @@ class _TelaContadorState extends State<TelaContador> {
                       ),
                     ),
                   );
+
+                  if (!context.mounted) return;
+
+                  if (resultado == true) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(
+                        content: Text('Pedido Confirmado com Sucesso!'),
+                      ),
+                    );
+                  }
                 },
                 child: const Text('Avançar para Resumo'),
               ),
