@@ -47,10 +47,19 @@ class _TelaContadorState extends State<TelaContador> {
     }
   }
 
+  void _zerar() {
+    setState(() {
+      _quantidade = 0;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Seleção de Itens'), centerTitle: true),
+      appBar: AppBar(
+        title: const Text('Seleção de Itens'),
+        centerTitle: true,
+      ),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
@@ -59,10 +68,7 @@ class _TelaContadorState extends State<TelaContador> {
             children: [
               Text(
                 _nomeProduto,
-                style: const TextStyle(
-                  fontSize: 22,
-                  fontWeight: FontWeight.bold,
-                ),
+                style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 24),
               Row(
@@ -76,10 +82,7 @@ class _TelaContadorState extends State<TelaContador> {
                     padding: const EdgeInsets.symmetric(horizontal: 24.0),
                     child: Text(
                       '$_quantidade',
-                      style: const TextStyle(
-                        fontSize: 32,
-                        fontWeight: FontWeight.bold,
-                      ),
+                      style: const TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
                     ),
                   ),
                   IconButton.filledTonal(
@@ -87,6 +90,11 @@ class _TelaContadorState extends State<TelaContador> {
                     icon: const Icon(Icons.add),
                   ),
                 ],
+              ),
+              const SizedBox(height: 16),
+              OutlinedButton(
+                onPressed: _zerar,
+                child: const Text('Zerar Contador'),
               ),
               const SizedBox(height: 40),
               ElevatedButton(
