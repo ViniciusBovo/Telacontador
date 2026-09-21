@@ -34,7 +34,6 @@ class TelaResumo extends StatelessWidget {
               const SizedBox(height: 32),
               ElevatedButton.icon(
                 onPressed: () {
-                  // Desempilha a tela atual e retorna à anterior
                   Navigator.pop(context);
                 },
                 icon: const Icon(Icons.arrow_back),

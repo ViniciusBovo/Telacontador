@@ -31,7 +31,7 @@ class TelaContador extends StatefulWidget {
 
 class _TelaContadorState extends State<TelaContador> {
   int _quantidade = 1;
-  final String _nomeProduto = 'Smartphone Galaxy S24';
+  final String _nomeProduto = 'Iphone 17 Pro Max';
 
   void _incrementar() {
     setState(() {
@@ -91,7 +91,6 @@ class _TelaContadorState extends State<TelaContador> {
               const SizedBox(height: 40),
               ElevatedButton(
                 onPressed: () {
-                  // Empilha a TelaResumo passando os dados do estado
                   Navigator.push(
                     context,
                     MaterialPageRoute(
